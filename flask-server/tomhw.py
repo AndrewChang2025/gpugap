@@ -22,6 +22,8 @@ for hierarchy in soup.find_all('div', attrs={'class': 'table__container'}, limit
 
 df = pd.DataFrame.from_dict(hierarchies, orient='index')
 df = df.transpose() #pandas gets mad if you have missing rows
+
+# write to a csv file
 df.to_csv('tomshardware_best_gpus.csv', index=False)
 
 pd.set_option('display.max_rows', None) 
